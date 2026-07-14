@@ -5,8 +5,18 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-    --font-heading: var(--font-sans);
+    --font-heading: var(--font-serif);
+    --font-serif: var(--font-serif);
     --font-sans: var(--font-sans);
+    --color-hearth-orange: #E85D04;
+    --color-hearth-orange-deep: #C24E03;
+    --color-hearth-cream: #FFF8F0;
+    --color-hearth-dark: #1A1A1A;
+    --color-hearth-ink-soft: rgba(26, 26, 26, 0.62);
+    --color-hearth-ink-faint: rgba(26, 26, 26, 0.42);
+    --color-hearth-line: rgba(26, 26, 26, 0.10);
+    --ease-hearth: cubic-bezier(0.19, 1, 0.22, 1);
+    --shadow-hearth-card: 0 18px 40px -18px rgba(26, 26, 26, 0.12);
     --color-sidebar-ring: var(--sidebar-ring);
     --color-sidebar-border: var(--sidebar-border);
     --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -48,6 +58,7 @@
 }
 
 :root {
+    --hearth-orange-glow: rgba(232, 93, 4, 0.30);
     --background: oklch(1 0 0);
     --foreground: oklch(0.145 0 0);
     --card: oklch(1 0 0);
@@ -129,4 +140,69 @@
   html {
     @apply font-sans;
     }
+}
+
+@layer utilities {
+  .font-serif {
+    font-family: var(--font-serif), ui-serif, Georgia, serif;
+  }
+
+  .ease-hearth {
+    transition-timing-function: var(--ease-hearth);
+  }
+
+  .shadow-hearth-card {
+    box-shadow: var(--shadow-hearth-card);
+  }
+}
+
+@keyframes hearth-flicker {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(232, 93, 4, 0);
+  }
+  50% {
+    transform: scale(1.45);
+    box-shadow: 0 0 8px 2px var(--hearth-orange-glow);
+  }
+}
+
+@keyframes hearth-breathe {
+  0%, 100% {
+    opacity: 0.65;
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.08);
+  }
+}
+
+@keyframes hearth-rise {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  85% {
+    opacity: 0.25;
+  }
+  100% {
+    transform: translateY(-70vh) translateX(var(--drift, 20px));
+    opacity: 0;
+  }
+}
+
+@utility animate-hearth-flicker {
+  animation: hearth-flicker 3.4s ease-in-out infinite;
+}
+
+@utility animate-hearth-breathe {
+  animation: hearth-breathe 6.5s ease-in-out infinite;
+}
+
+@utility animate-hearth-rise {
+  animation: hearth-rise linear infinite;
 }
