@@ -11,7 +11,7 @@ export function HeroSection() {
   return (
     <section className="relative flex min-h-svh items-center overflow-hidden px-0 py-[150px] pb-[90px] text-center">
       <div
-        className="absolute inset-[-4%] scale-[1.12] bg-cover bg-[center_18%] blur-[18px] saturate-[1.15]"
+        className="absolute inset-[-4%] scale-[1.12] bg-cover bg-position-[center_18%] blur-[18px] saturate-[1.15]"
         style={{ backgroundImage: "url(/assets/phone_table.png)" }}
         aria-hidden
       />

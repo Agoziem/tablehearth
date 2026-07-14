@@ -33,7 +33,7 @@ export function WaitlistSection() {
             <Reveal key={card.tag} delay={(index as 0 | 1 | 2) ?? 0}>
               <Card className="gap-0 rounded-[22px] border border-white/22 bg-white/10 py-0 text-white shadow-none ring-0 backdrop-blur-[6px]">
                 <CardHeader className="px-[26px] pt-[30px]">
-                  <Badge className="mb-3.5 h-auto rounded-none border-0 bg-transparent px-0 py-0 text-[11px] font-bold tracking-[0.1em] text-[#FFE1C7] uppercase shadow-none hover:bg-transparent">
+                  <Badge className="mb-3.5 h-auto rounded-none border-0 bg-transparent px-0 py-0 text-[11px] font-bold tracking-widest text-[#FFE1C7] uppercase shadow-none hover:bg-transparent">
                     {card.tag}
                   </Badge>
                   <CardTitle className="font-serif text-[19px] font-medium text-white">
