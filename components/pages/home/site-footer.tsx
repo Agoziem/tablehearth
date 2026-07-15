@@ -4,7 +4,7 @@ export function SiteFooter() {
   return (
     <footer className="border-t border-hearth-line bg-hearth-cream px-0 py-11 text-center">
       <div className="mx-auto max-w-[1120px] px-6 md:px-10">
-        <LogoMark className="mx-auto flex w-fit justify-center" />
+        <LogoMark className="mx-auto h-9 w-auto" />
         <p className="mb-3.5 text-[13px] text-hearth-ink-soft">
           Faithfulness over fame.
         </p>

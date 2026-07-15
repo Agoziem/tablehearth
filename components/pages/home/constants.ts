@@ -73,7 +73,7 @@ export const waitlistCards = [
 export const heroMicro = [
   "Save My Seat",
   "Free",
-  "50 beta spots only",
+  "100 beta spots only",
   "No WhatsApp groups",
 ]
 

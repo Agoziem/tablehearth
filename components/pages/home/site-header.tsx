@@ -28,7 +28,7 @@ export function SiteHeader() {
       )}
     >
       <div className="mx-auto flex max-w-[1120px] items-center justify-between px-6 md:px-10">
-        <LogoMark light={!scrolled} />
+        <LogoMark priority onDarkBackground={!scrolled} />
         <Button
           asChild
           variant="outline"
